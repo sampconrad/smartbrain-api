@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt');
 const cors = require('cors');
 const knex = require('knex');
 
@@ -51,7 +51,7 @@ app.post('/imageurl', (req, res) => {
 	image.handleApiCall(req, res);
 });
 
-const PORT = process.env.PORT;
-app.listen(PORT || 3000, () => {
-	console.log(`app is running on port ${PORT}`);
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+	console.log(`app is running on port:${PORT}`);
 });
